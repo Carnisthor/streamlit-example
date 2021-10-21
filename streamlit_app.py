@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 
 """
-# Welcome to Streamlit!
+# TE - Smart City Challenge
 
 Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
 
