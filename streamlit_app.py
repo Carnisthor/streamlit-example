@@ -17,5 +17,9 @@ chart_data = pd.DataFrame(np.random.randn(20, 3),columns=['a', 'b', 'c'])
 
 st.line_chart(chart_data)
 
-#df = pd.read_csv("floor1_compressed.csv")
+"""
+Some text as a seperator
+"""
+
+df = pd.read_csv('floor1_compressed.csv', sep=',')
 #st.line_chart(df[['date', 'sum']])
