@@ -19,5 +19,5 @@ chart_data = pd.DataFrame(
 
 st.line_chart(chart_data)
 
-df = pd.read_csv("floor1_compressed.csv")
-st.line_chart(df[['date', 'sum']])
+#df = pd.read_csv("floor1_compressed.csv")
+#st.line_chart(df[['date', 'sum']])
