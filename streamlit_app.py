@@ -22,5 +22,4 @@ Some text as a seperator
 """
 
 df = pd.read_csv('floor1_compressed.csv', sep=',')
-df = df.setIndex('date')
-st.line_chart(df)
+st.line_chart(df.rename(columns={'date':'index'}).set_index('index'))
