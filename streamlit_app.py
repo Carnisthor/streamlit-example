@@ -23,4 +23,8 @@ Some text as a seperator
 
 df = pd.read_csv('floor1_compressed.csv', sep=',')
 new_df = df[['date', 'sum']].copy()
-st.line_chart(new_df.rename(columns={'date':'index'}).set_index('index'))
+
+week_compressed_df = df.resample('W', on='date').sum().copy()
+
+#st.line_chart(new_df.rename(columns={'date':'index'}).set_index('index'))
+st.line_chart(week_compressed_df)
