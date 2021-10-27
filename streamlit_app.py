@@ -27,7 +27,7 @@ week_compressed_df = df.resample('W', on='date').sum().copy()
 
 col1, col2, col3 = st.columns(3)
 col1.metric('Average energy consumption', '100 kW')
-col1.metric('Average energy consumption on weekdays', '50 kW')
-col1.metric('Average energy consumption on weekends', '50 kW')
+col2.metric('Average energy consumption on weekdays', '50 kW')
+col3.metric('Average energy consumption on weekends', '50 kW')
 
 st.line_chart(week_compressed_df)
