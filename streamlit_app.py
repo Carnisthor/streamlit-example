@@ -20,6 +20,8 @@ new_df = df[['date', 'sum']].copy()
 
 week_compressed_df = new_df.resample('W', on='date').sum().copy()
 overall_sum = df['sum'].sum()
+weekend_mean = df.query("weekend == True")['sum'].mean()
+weekday_mean = df.query("weekend == False")['sum'].mean()
 
 #st.line_chart(new_df.rename(columns={'date':'index'}).set_index('index'))
 
