@@ -22,6 +22,7 @@ Some text as a seperator
 """
 
 df = pd.read_csv('floor1_compressed.csv', sep=',')
+df['date'] = pd.to_datetime(df['date'])
 new_df = df[['date', 'sum']].copy()
 
 week_compressed_df = df.resample('W', on='date').sum().copy()
