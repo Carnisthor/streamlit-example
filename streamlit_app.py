@@ -18,7 +18,8 @@ df = pd.read_csv('floor1_compressed.csv', sep=',')
 df['date'] = pd.to_datetime(df['date'])
 new_df = df[['date', 'sum']].copy()
 
-week_compressed_df = df.resample('W', on='date').sum().copy()
+week_compressed_df = new_df.resample('W', on='date').sum().copy()
+overall_sum = df['sum'].sum()
 
 #st.line_chart(new_df.rename(columns={'date':'index'}).set_index('index'))
 
@@ -26,7 +27,7 @@ week_compressed_df = df.resample('W', on='date').sum().copy()
 # Actual data viz
 
 col1, col2, col3 = st.columns(3)
-col1.metric('Average energy consumption', '100 kW')
+col1.metric('Average energy consumption', overall_sum)
 col2.metric('Average energy consumption on weekdays', '50 kW')
 col3.metric('Average energy consumption on weekends', '50 kW')
 
