@@ -15,6 +15,8 @@ Insert some awesome introduction right here
 
 # --- Data Preperation section ---
 df = pd.read_csv('floor1_compressed.csv', sep=',')
+df['sum'] = df['sum'] / 60
+
 df['date'] = pd.to_datetime(df['date'])
 new_df = df[['date', 'sum']].copy()
 
@@ -29,7 +31,7 @@ weekday_mean = df.query("weekend == False")['sum'].mean()
 # Actual data viz
 
 col1, col2, col3 = st.columns(3)
-col1.metric('Average energy consumption', overall_sum)
+col1.metric('Overall energy consumption', overall_sum)
 col2.metric('Average energy consumption on weekdays', weekday_mean)
 col3.metric('Average energy consumption on weekends', weekend_mean)
 
