@@ -15,7 +15,7 @@ Insert some awesome introduction right here
 
 # --- Data Preperation section ---
 df = pd.read_csv('floor1_compressed.csv', sep=',')
-df['sum'] = df['sum'] / 60
+df['sum'] = df['sum'] / 1440
 
 df['date'] = pd.to_datetime(df['date'])
 new_df = df[['date', 'sum']].copy()
