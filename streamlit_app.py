@@ -31,8 +31,8 @@ weekday_mean = df.query("weekend == False")['sum'].mean()
 # Actual data viz
 
 col1, col2, col3 = st.columns(3)
-col1.metric('Overall energy consumption', overall_sum)
-col2.metric('Average energy consumption on weekdays', weekday_mean)
-col3.metric('Average energy consumption on weekends', weekend_mean)
+col1.metric('Overall energy consumption', int(overall_sum))
+col2.metric('Average energy consumption on weekdays', int(weekday_mean))
+col3.metric('Average energy consumption on weekends', int(weekend_mean))
 
 st.area_chart(week_compressed_df)
