@@ -13,14 +13,7 @@ This is our entry for the AI and Data Products Challenge @Lara and @Clemens.
 Insert some awesome introduction right here
 """
 
-chart_data = pd.DataFrame(np.random.randn(125, 3),columns=['a', 'b', 'c'])
-
-st.line_chart(chart_data)
-
-"""
-Some text as a seperator
-"""
-
+# --- Data Preperation section ---
 df = pd.read_csv('floor1_compressed.csv', sep=',')
 df['date'] = pd.to_datetime(df['date'])
 new_df = df[['date', 'sum']].copy()
@@ -28,4 +21,13 @@ new_df = df[['date', 'sum']].copy()
 week_compressed_df = df.resample('W', on='date').sum().copy()
 
 #st.line_chart(new_df.rename(columns={'date':'index'}).set_index('index'))
+
+
+# Actual data viz
+
+col1, col2, col3 = st.columns(3)
+col1.metric('Average energy consumption', '100 kW')
+col1.metric('Average energy consumption on weekdays', '50 kW')
+col1.metric('Average energy consumption on weekends', '50 kW')
+
 st.line_chart(week_compressed_df)
