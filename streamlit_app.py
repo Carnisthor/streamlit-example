@@ -51,7 +51,7 @@ col3.metric('Ø consumption on weekends', str("{:.2f}".format(weekend_mean)) + '
 st.area_chart(week_compressed_df.rename(columns={'sum':'Energy Consumption (kWh)'}))
 
 col4, col5, col6 = st.columns(3)
-col4.metric('Potentital energy savings (%)', str("{:.2f}".format(wasted_energy_pcrt * 100) + ' %')
+col4.metric('Potentital energy savings (%)', str("{:.2f}".format(wasted_energy_pcrt * 100) + ' %'))
 col5.metric('Potential savings (kWh)', str(int(weekend_sum)) + ' kWh')
 col6.metric('Potential savings (€)', int(potential_savings))
 
