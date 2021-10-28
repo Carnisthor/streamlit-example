@@ -55,10 +55,11 @@ st.header('Magic glass ball')
 # data = ''
 # for index, row in df.iterrows():
   # data = data + "{'row['date']}"
-if st.button('Say hello'):
-  st.write('Why hello there')
+if st.button('Predict the future (6 weeks)'):
+  chart_data = pd.DataFrame(np.random.randn(20, 3), columns=['a','b','c'])
+  st.line_chart(chart_data)
 else:
-  st.write('Goodbye')
+  # Nothing will happen here
 
 st.header('Energy inspector')
 """
