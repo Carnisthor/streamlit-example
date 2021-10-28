@@ -36,6 +36,8 @@ weekdays_compressed_df = new_new_df.resample('M', on='date').sum().copy()
 weekdays_compressed_df.rename(columns={'sum':'sum2'})
 test = pd.concat([week_compressed_df, weekdays_compressed_df], ignore_index=True)
 
+new_new_new_df = df.resample('M', on='date').sum().copy()
+
 # Actual data viz
 st.header('Energy Cockpit')
 st.text('The energy Cockpit shows the energy consumption of your building.')
@@ -52,4 +54,4 @@ col4.metric('From total', str("{:.2f}".format(wasted_energy_pcrt * 100) + ' %'))
 col5.metric('In energy', str("{:.2f}".format(weekend_sum)) + ' kWh')
 col6.metric('Monetary', str("{:.2f}".format(potential_savings)) + ' EUR')
 
-st.area_chart(test)
+st.area_chart(new_new_new_df)
