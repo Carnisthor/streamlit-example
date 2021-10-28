@@ -44,7 +44,7 @@ col1.metric('Total energy consumption', str(int(overall_sum)) + ' kWh')
 col2.metric('Ø consumption on weekdays', str("{:.2f}".format(weekday_mean)) + ' kWh')
 col3.metric('Ø consumption on weekends', str("{:.2f}".format(weekend_mean)) + ' kWh')
 
-st.plotly_chart(week_compressed_df.rename(columns={'sum':'Energy Consumption (kWh)'}))
+st.line_chart(week_compressed_df.rename(columns={'sum':'Energy Consumption (kWh)'}))
 
 st.subheader('Potential savings')
 col4, col5, col6 = st.columns(3)
