@@ -56,3 +56,4 @@ st.header('Energy inspector')
 The energy inspector shows detailed information on what could be improved to save energy.
 """
 date = st.date_input('Select a date to inspect')
+st.write(date)
