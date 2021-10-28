@@ -20,7 +20,7 @@ df['sum'] = df['sum'] / 1440
 df['date'] = pd.to_datetime(df['date'])
 new_df = df[['date', 'sum']].copy()
 
-week_compressed_df = new_df.resample('W', on='date').sum().copy()
+week_compressed_df = new_df.resample('M', on='date').sum().copy()
 overall_sum = df['sum'].sum()
 weekend_mean = df.query("weekend == True")['sum'].mean()
 weekday_mean = df.query("weekend == False")['sum'].mean()
