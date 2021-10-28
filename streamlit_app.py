@@ -59,7 +59,8 @@ if st.button('Predict the future (6 weeks)'):
   chart_data = pd.DataFrame(np.random.randn(20, 3), columns=['a','b','c'])
   st.line_chart(chart_data)
 else:
-  # Nothing will happen here
+  1 = 1
+# Nothing will happen here
 
 st.header('Energy inspector')
 """
