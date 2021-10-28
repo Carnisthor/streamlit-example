@@ -53,7 +53,7 @@ st.caption('/* All energy savings are calculated on the basis that the AC is com
 st.header('Magic glass ball')
 # Since forecast creation is not possible here in Streamlit Cloud, we will fallback on this workaround
 if st.button('Predict the future (6 weeks)'):
-  series = pd.data_range(start='2020-01-01', end='2020-02-09', freq='D')
+  series = pd.date_range(start='2020-01-01', end='2020-02-09', freq='D')
   series['nums'] = np.random.randint(df['sum'].min(), df['sum'].max(), size=(len(series)))
   st.line_chart(series)
 else:
