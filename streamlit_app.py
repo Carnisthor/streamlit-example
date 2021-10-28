@@ -51,13 +51,11 @@ col6.metric('Monetary', str("{:.2f}".format(potential_savings)) + ' EUR')
 st.caption('/* All energy savings are calculated on the basis that the AC is completly turned off during weekends.')
 
 st.header('Magic glass ball')
-# url = 'https://unplu.gg/forecast'
-# data = ''
-# for index, row in df.iterrows():
-  # data = data + "{'row['date']}"
+# Since forecast creation is not possible here in Streamlit Cloud, we will fallback on this workaround
 if st.button('Predict the future (6 weeks)'):
-  chart_data = pd.DataFrame(np.random.randn(20, 3), columns=['a','b','c'])
-  st.line_chart(chart_data)
+  series = pd.data_range(start='2020-01-01', end='2020-02-09', freq='D')
+  series['nums'] = np.random.randint(df['sum'].min(), df['sum'].max(), size=(len(series)))
+  st.line_chart(series)
 else:
   a = 1
 # Nothing will happen here
