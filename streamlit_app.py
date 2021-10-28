@@ -58,5 +58,5 @@ The energy inspector shows detailed information on what could be improved to sav
 """
 first_date = date.fromisoformat('2018-07-01')
 last_date = date.fromisoformat('2019-12-31')
-date = st.date_input('Select a date to inspect', min_value=first_date, max_value=last_date)
+date = st.date_input('Select a date to inspect')
 st.info('Feature is currently not available')
