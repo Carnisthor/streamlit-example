@@ -24,6 +24,12 @@ week_compressed_df = new_df.resample('W', on='date').sum().copy()
 overall_sum = df['sum'].sum()
 weekend_mean = df.query("weekend == True")['sum'].mean()
 weekday_mean = df.query("weekend == False")['sum'].mean()
+weekend_sum = df.query("weekend == True")['sum'].sum()
+weekday_sum = df.query("weekend == False")['sum'].sum()
+wasted_energy_pcrt = (weekend_sum / overall_sum)
+energy_price = 0.3194
+potential_savings = weekend_sum * energy_price
+
 
 #st.line_chart(new_df.rename(columns={'date':'index'}).set_index('index'))
 
@@ -39,3 +45,8 @@ col2.metric('Ø consumption on weekdays', str(int(weekday_mean)) + ' kWh')
 col3.metric('Ø consumption on weekends', str(int(weekend_mean)) + ' kWh')
 
 st.area_chart(week_compressed_df.rename(columns={'sum':'Energy Consumption (kWh)'}))
+
+col4, col5, col6 = st.columns(3)
+col4.metric('Potentital energy savings (%)', int(wasted_energy_pcrt) * 100)
+col5.metric('Potential savings (kWh)', str(int(weekend_sum)) + ' kWh')
+col6.metric('Potential savings (€)', int(potential_savings))
