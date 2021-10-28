@@ -30,8 +30,11 @@ weekday_mean = df.query("weekend == False")['sum'].mean()
 
 # Actual data viz
 
+
+st.header('Energy Cockpit')
+st.text('The energy Cockpit shows the energy consumption of your building.')
 col1, col2, col3 = st.columns(3)
-col1.metric('Overall energy consumption', str(int(overall_sum)) + ' kWh')
+col1.metric('Total energy consumption', str(int(overall_sum)) + ' kWh')
 col2.metric('Ø consumption on weekdays', str(int(weekday_mean)) + ' kWh')
 col3.metric('Ø consumption on weekends', str(int(weekend_mean)) + ' kWh')
 
