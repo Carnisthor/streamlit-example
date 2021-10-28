@@ -4,6 +4,7 @@ import math
 import pandas as pd
 import streamlit as st
 import numpy as np
+from datetime import date
 
 """
 # Tomorrows Education - Smart City App
@@ -55,5 +56,7 @@ st.header('Energy inspector')
 """
 The energy inspector shows detailed information on what could be improved to save energy.
 """
-date = st.date_input('Select a date to inspect')
-st.write(date)
+first_date = date.fromisoformat('2018-07-01')
+last_date = date.fromisoformat('2019-12-31')
+date = st.date_input('Select a date to inspect', min_value=first_date, max_value=last_date)
+st.info('Feature is currently not available')
