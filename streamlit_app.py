@@ -44,14 +44,14 @@ test = pd.concat([week_compressed_df, weekdays_compressed_df], ignore_index=True
 st.header('Energy Cockpit')
 st.text('The energy Cockpit shows the energy consumption of your building.')
 col1, col2, col3 = st.columns(3)
-col1.metric('Total energy consumption', str("{:.2f}".format(overall_sum)) + ' kWh')
-col2.metric('Ø consumption on weekdays', str(int(weekday_mean)) + ' kWh')
-col3.metric('Ø consumption on weekends', str(int(weekend_mean)) + ' kWh')
+col1.metric('Total energy consumption', str(int(overall_sum)) + ' kWh')
+col2.metric('Ø consumption on weekdays', str("{:.2f}".format(weekday_mean)) + ' kWh')
+col3.metric('Ø consumption on weekends', str("{:.2f}".format(weekend_mean)) + ' kWh')
 
 st.area_chart(week_compressed_df.rename(columns={'sum':'Energy Consumption (kWh)'}))
 
 col4, col5, col6 = st.columns(3)
-col4.metric('Potentital energy savings (%)', int(wasted_energy_pcrt * 100))
+col4.metric('Potentital energy savings (%)', str("{:.2f}".format(wasted_energy_pcrt * 100) + ' %')
 col5.metric('Potential savings (kWh)', str(int(weekend_sum)) + ' kWh')
 col6.metric('Potential savings (€)', int(potential_savings))
 
