@@ -41,12 +41,10 @@ test = pd.concat([week_compressed_df, weekdays_compressed_df], ignore_index=True
 
 
 # Actual data viz
-
-
 st.header('Energy Cockpit')
 st.text('The energy Cockpit shows the energy consumption of your building.')
 col1, col2, col3 = st.columns(3)
-col1.metric('Total energy consumption', str(int(overall_sum)) + ' kWh')
+col1.metric('Total energy consumption', str("{:.2f}".format(overall_sum)) + ' kWh')
 col2.metric('Ø consumption on weekdays', str(int(weekday_mean)) + ' kWh')
 col3.metric('Ø consumption on weekends', str(int(weekend_mean)) + ' kWh')
 
