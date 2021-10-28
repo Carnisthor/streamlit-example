@@ -38,4 +38,4 @@ col1.metric('Total energy consumption', str(int(overall_sum)) + ' kWh')
 col2.metric('Ø consumption on weekdays', str(int(weekday_mean)) + ' kWh')
 col3.metric('Ø consumption on weekends', str(int(weekend_mean)) + ' kWh')
 
-st.area_chart(week_compressed_df)
+st.area_chart(week_compressed_df.rename(columns={'sum':'Energy Consumption (kWh)'}))
