@@ -5,6 +5,7 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 from datetime import date
+import requests
 
 """
 # Tomorrows Education - Smart City App
@@ -50,18 +51,11 @@ col6.metric('Monetary', str("{:.2f}".format(potential_savings)) + ' EUR')
 st.caption('/* All energy savings are calculated on the basis that the AC is completly turned off during weekends.')
 
 st.header('Magic glass ball')
-# AR example
-from statsmodels.tsa.ar_model import AutoReg
-from random import random
-# contrived dataset
-data = [x + random() for x in range(1, 100)]
-# fit model
-model = AutoReg(data, lags=1)
-model_fit = model.fit()
-# make prediction
-yhat = model_fit.predict(len(data), len(data))
+url = 'https://unplu.gg/forecast'
+data = ''
+#for index, row in df.iterrows():
+  #data = data + "{'row['date']}"
 
-st.info(yhat)
 
 st.header('Energy inspector')
 """
