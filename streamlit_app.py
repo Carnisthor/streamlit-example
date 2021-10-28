@@ -49,3 +49,10 @@ col6.metric('Monetary', str("{:.2f}".format(potential_savings)) + ' EUR')
 st.caption('/* All energy savings are calculated on the basis that the AC is completly turned off during weekends.')
 
 st.header('Magic glass ball')
+
+
+st.header('Energy inspector')
+"""
+The energy inspector shows detailed information on what could be improved to save energy.
+"""
+date = st.date_input('Select a date to inspect')
