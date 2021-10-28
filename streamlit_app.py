@@ -34,7 +34,7 @@ weekdays_only_df = df[df['weekend'] == False]
 new_new_df = weekdays_only_df[['date', 'sum']].copy()
 weekdays_compressed_df = new_new_df.resample('M', on='date').sum().copy()
 weekdays_compressed_df.rename(columns={'sum':'sum2'})
-test = pd.concat([week_compressed_df, weekdays_compressed_df])
+test = pd.concat([week_compressed_df, weekdays_compressed_df], ignore_index=True)
 
 
 #st.line_chart(new_df.rename(columns={'date':'index'}).set_index('index'))
