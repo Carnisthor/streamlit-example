@@ -59,7 +59,7 @@ if st.button('Predict the future (6 weeks)'):
   
   series = pd.date_range(start='2016-01-01', end='2020-12-31', freq='D')
   df_from_series = series.to_frame()
-  df_from_series['nums'] = np.random.randint(0, 42, size=(len(df_from_series)))
+  df_from_series['nums'] = np.random.randint(df['sum'].min(), df['sum'].max(), size=(len(df_from_series)))
   reduced_series = df_from_series['nums']
   st.line_chart(reduced_series)
 else:
