@@ -51,11 +51,14 @@ col6.metric('Monetary', str("{:.2f}".format(potential_savings)) + ' EUR')
 st.caption('/* All energy savings are calculated on the basis that the AC is completly turned off during weekends.')
 
 st.header('Magic glass ball')
-url = 'https://unplu.gg/forecast'
-data = ''
-#for index, row in df.iterrows():
-  #data = data + "{'row['date']}"
-
+# url = 'https://unplu.gg/forecast'
+# data = ''
+# for index, row in df.iterrows():
+  # data = data + "{'row['date']}"
+if st.button('Say hello'):
+  st.write('Why hello there')
+else:
+  st.write('Goodbye')
 
 st.header('Energy inspector')
 """
