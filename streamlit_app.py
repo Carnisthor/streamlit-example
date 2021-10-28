@@ -30,8 +30,9 @@ wasted_energy_pcrt = (weekend_sum / overall_sum)
 energy_price = 0.3194
 potential_savings = weekend_sum * energy_price
 
-weekdays_only_df = new_df['weekend'] == False
-weekdays_compressed_df = weekdays_only_df.resample('W', on='date').sum().copy()
+weekdays_only_df = df[df['weekend'] == False]
+new_new_df = weekdays_only_df[['date', 'sum']].copy()
+weekdays_compressed_df = new_new_df.resample('W', on='date').sum().copy()
 weekdays_compressed_df.rename(columns={'sum':'sum2'})
 test = pd.concat([week_compressed_df, weekdays_compressed_df])
 
