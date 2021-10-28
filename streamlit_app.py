@@ -46,6 +46,6 @@ col4.metric('From total', str("{:.2f}".format(wasted_energy_pcrt * 100) + ' %'))
 col5.metric('In energy', str("{:.2f}".format(weekend_sum)) + ' kWh')
 col6.metric('Monetary', str("{:.2f}".format(potential_savings)) + ' EUR')
 
-st.caption('* All energy savings are calculated on the basis that the AC is completly turned off during weekends.')
+st.caption('/* All energy savings are calculated on the basis that the AC is completly turned off during weekends.')
 
 st.header('Magic glass ball')
