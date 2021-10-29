@@ -8,11 +8,10 @@ from datetime import date
 import requests
 
 """
-# Tomorrows Education - Smart City App
-
-This is our entry for the AI and Data Products Challenge @Lara and @Clemens.
-
-Insert some awesome introduction right here
+# Tomorrows Education - AI & Data Products Challenge Prototyp
+This app is the prototyp for the AI & Data Products challenge by Lara, Jan & Clemens.
+The goal of the prototyp is to provide actionable insights on the energy consumption of a building with recommendations on how to optimize it - 
+thus reducing overall energy consumption and cost. More detailed infomration can be found in the respective Google Drive and Pitch Deck.
 """
 
 # --- Data Preperation section ---
