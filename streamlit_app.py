@@ -7,6 +7,13 @@ import numpy as np
 import datetime
 import requests
 
+def isThisWeekend(day):
+  weekno = day.datetime.today().weekday()
+  if weekno < 5:
+    print "Weekday"
+  else:  # 5 Sat, 6 Sun
+    print "Weekend"
+
 """
 # Tomorrows Education - AI & Data Products Challenge Prototyp
 This app is the prototyp for the AI & Data Products challenge by Lara, Jan & Clemens.
@@ -68,4 +75,4 @@ The energy inspector shows detailed information on what could be improved to sav
 first_date = datetime.date(2018, 7, 1)
 last_date = datetime.date(2019, 12, 31)
 date = st.date_input(label='Select a date to inspect', min_value=first_date, max_value=last_date)
-st.info(date)
+
