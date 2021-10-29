@@ -10,9 +10,9 @@ import requests
 def isThisWeekend(day):
   weekno = day.datetime.today().weekday()
   if weekno < 5:
-    print "Weekday"
+    return True
   else:  # 5 Sat, 6 Sun
-    print "Weekend"
+    return False
 
 """
 # Tomorrows Education - AI & Data Products Challenge Prototyp
