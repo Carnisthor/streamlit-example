@@ -33,11 +33,11 @@ potential_savings = weekend_sum * energy_price
 
 # Actual data viz
 st.header('Energy Cockpit')
-st.text('The energy Cockpit shows the energy consumption of your building.')
+st.caption('The energy Cockpit shows the energy consumption of your building. For this prototype we have solely on the AC related energy consumption and only for a single floor of our building')
 col1, col2, col3 = st.columns(3)
-col1.metric('Total energy consumption', str(int(overall_sum)) + ' kWh')
-col2.metric('Ø consumption on weekdays', str("{:.2f}".format(weekday_mean)) + ' kWh')
-col3.metric('Ø consumption on weekends', str("{:.2f}".format(weekend_mean)) + ' kWh')
+col1.metric('Total AC energy consumption', str(int(overall_sum)) + ' kWh')
+col2.metric('Ø AC consumption on weekdays', str("{:.2f}".format(weekday_mean)) + ' kWh')
+col3.metric('Ø AC consumption on weekends', str("{:.2f}".format(weekend_mean)) + ' kWh')
 
 st.line_chart(week_compressed_df.rename(columns={'sum':'Energy Consumption (kWh)'}))
 
