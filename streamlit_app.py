@@ -42,14 +42,14 @@ col3.metric('Ø AC consumption on weekends', str("{:.2f}".format(weekend_mean)) 
 st.line_chart(week_compressed_df.rename(columns={'sum':'Energy Consumption (kWh)'}))
 
 st.subheader('Potential savings')
+st.caption('All energy savings are calculated on the basis that the AC is completly turned off during weekends.')
 col4, col5, col6 = st.columns(3)
 col4.metric('From total', str("{:.2f}".format(wasted_energy_pcrt * 100) + ' %'))
 col5.metric('In energy', str("{:.2f}".format(weekend_sum)) + ' kWh')
 col6.metric('Monetary', str("{:.2f}".format(potential_savings)) + ' EUR')
 
-st.caption('/* All energy savings are calculated on the basis that the AC is completly turned off during weekends.')
-
 st.header('Magic glass ball')
+st.caption('The magic glass ball feature allows a forecast of the energy consumption of the building for the next 6 weeks.')
 # Since forecast creation is not possible here in Streamlit Cloud, we will fallback on this workaround
 if st.button('Predict the future (6 weeks)'):
   series = pd.date_range(start='2020-01-01', end='2020-02-09', freq='D')
