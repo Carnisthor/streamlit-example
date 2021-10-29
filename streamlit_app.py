@@ -13,7 +13,8 @@ def isThisWeekend(day):
     return True
   else:  # 5 Sat, 6 Sun
     return False
-
+# Again a placeholder
+  
 """
 # Tomorrows Education - AI & Data Products Challenge Prototyp
 This app is the prototyp for the AI & Data Products challenge by Lara, Jan & Clemens.
