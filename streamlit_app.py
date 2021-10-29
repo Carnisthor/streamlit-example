@@ -4,7 +4,7 @@ import math
 import pandas as pd
 import streamlit as st
 import numpy as np
-from datetime import date
+import datetime
 import requests
 
 """
@@ -65,7 +65,7 @@ st.header('Energy inspector')
 """
 The energy inspector shows detailed information on what could be improved to save energy.
 """
-first_date = date.fromisoformat('2018-07-01')
-last_date = date.fromisoformat('2019-12-31')
-date = st.date_input(label='Select a date to inspect', min_value='2018-07-01')
+first_date = datetime.date(2018, 7, 1)
+#last_date = date.fromisoformat('2019-12-31')
+date = st.date_input(label='Select a date to inspect', min_value=first_date)
 st.info('Feature is currently not available')
