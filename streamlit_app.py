@@ -75,5 +75,5 @@ The energy inspector shows detailed information on what could be improved to sav
 """
 first_date = datetime.date(2018, 7, 1)
 last_date = datetime.date(2019, 12, 31)
-date = st.date_input(label='Select a date to inspect', min_value=first_date, max_value=last_date)
-
+d = st.date_input(label='Select a date to inspect', min_value=first_date, max_value=last_date):
+st.caption(d)
