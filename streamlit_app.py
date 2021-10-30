@@ -6,6 +6,7 @@ import streamlit as st
 import numpy as np
 import datetime
 import requests
+from random import random
 
 def isThisWeekend(day):
   weekno = day.datetime.today().weekday()
