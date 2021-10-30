@@ -76,9 +76,8 @@ The energy inspector shows detailed information on what could be improved to sav
 """
 d = st.date_input(label='Select a date to inspect', value=datetime.date(2019, 10, 28), min_value=datetime.date(2018, 7, 1), max_value=datetime.date(2019, 12, 31))
 #st.write(d)
-if d:
-  test = d.weekday()
-  st.write(test)
+if d.weekday() > 4:
+  st.write("It's the weekend! You should shut the AC off to not waste energy.")
 else:
-  a = 1
+  st.write("AC consumption was okay.")
 # Placeholder
