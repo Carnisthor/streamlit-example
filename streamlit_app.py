@@ -7,14 +7,6 @@ import numpy as np
 import datetime
 import requests
 from random import random
-
-def isThisWeekend(day):
-  weekno = day.datetime.today().weekday()
-  if weekno < 5:
-    return True
-  else:  # 5 Sat, 6 Sun
-    return False
-# Again a placeholder
   
 """
 # Tomorrows Education - AI & Data Products Challenge Prototyp
@@ -71,13 +63,10 @@ else:
 # Nothing will happen here
 
 st.header('Energy inspector')
-"""
-The energy inspector shows detailed information on what could be improved to save energy.
-"""
+st.caption('The energy inspector shows detailed information on what could be improved to save energy.')
 d = st.date_input(label='Select a date to inspect', value=datetime.date(2019, 10, 28), min_value=datetime.date(2018, 7, 1), max_value=datetime.date(2019, 12, 31))
-#st.write(d)
 if d.weekday() > 4:
-  st.write("It's the weekend! You should shut the AC off to not waste energy.")
+  st.warning("It's the weekend! You should shut the AC off to not waste energy.")
 else:
-  st.write("AC consumption was okay.")
+  st.info("AC consumption was okay.")
 # Placeholder
