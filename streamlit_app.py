@@ -73,4 +73,5 @@ st.header('Energy inspector')
 """
 The energy inspector shows detailed information on what could be improved to save energy.
 """
-d = st.date_input(label='Select a date to inspect', value=datetime.date(2019, 10, 28), min_value=datetime.date(2019, 12, 31), max_value=datetime.date(2018, 7, 1))
+#d = st.date_input(label='Select a date to inspect', value=datetime.date(2019, 10, 28), min_value=datetime.date(2019, 12, 31), max_value=datetime.date(2018, 7, 1))
+d = st.date_input("When's your birthday", datetime.date(2019, 7, 6))
