@@ -76,8 +76,8 @@ The energy inspector shows detailed information on what could be improved to sav
 """
 d = st.date_input(label='Select a date to inspect', value=datetime.date(2019, 10, 28), min_value=datetime.date(2018, 7, 1), max_value=datetime.date(2019, 12, 31))
 #st.write(d)
-if d:
-  st.write(random())
+if d.today().weekday() > 4:
+  st.write('Its the weekend!')
 else:
-  st.write(12)
+  st.write('Its the week!')
 # Placeholder
